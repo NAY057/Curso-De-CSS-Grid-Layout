@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    /* 100vh = altura del viewport */
+    height: 100vh;
+    /* MUY IMPORTANTE ESTA PARTE, YA QUE ESTA PARTICIONA PERFECTAMENTE TODA LA PAGINA*/
+
+}
+
+.item{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+    gap: 30px 100px;
+
+}
+
+.item2{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+/* Esta parte selecciona el primer 'item' */
+.item:nth-of-type(1){
+background: tomato;
+grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item:nth-of-type(8){
+    background: blueviolet;
+    /* esta es la version simplificada de 'grid-column-start y grid-column-end' */
+    /* grid-column: (donde empieza / donde termina); */
+    /* OJOO NO SE DEBE DE PONER PARENTESIS */
+    grid-column: 1/span 2;
+    /* al colocar '-1' hace que la columna ocupe automaticamente todo el ancho de una maneta responsiva */
+    grid-column: 1/-1;
+}
+
+.item:nth-of-type(7){
+    grid-column: 2/4;
+    background: aqua;
+}

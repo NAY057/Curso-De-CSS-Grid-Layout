@@ -1,0 +1,54 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: [inicio] 1fr [linea1] 1fr [linea2] 1fr [linea3] 1fr [destacado-end] 1fr [linea5] 1fr [destacado2-end] 1fr [linea7] 1fr [final];
+    grid-template-rows: [inicio] 200px [inicio2] 200px [final];
+    gap:  5px;
+    height: 100vh;
+    /* grid-auto-flow: column; cambia el flujo automatico del grid, por defecto esta en row */
+    /* grid-auto-flow: column; */
+    /* grid-auto-columns: ; asigna un valor a las columnas o filas que no han sido asignadas */
+    /* grid-auto-columns: 400px 400px; */
+    grid-auto-rows: 50px 100px ;
+
+
+}
+
+.item{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+    gap: 30px 100px;
+
+}
+
+.item2{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+/* Esta parte selecciona el primer 'item' */
+.item:nth-of-type(1){
+/* background: tomato;
+grid-column-start: 1;
+    grid-column-end: 3; */
+    /* grid-column: 1/span 3;
+    grid-row: 1/span 2; */
+    grid-column: inicio/destacado-end;
+    grid-row: inicio/final;
+}
+
+.item:nth-of-type(2){
+    /* grid-column: 4/span 2;
+    grid-row: 1/span 2; */
+    grid-column: destacado-end/destacado2-end;
+    grid-row: inicio/final;
+}
+.item:nth-of-type(3){
+    /* grid-column: 6/span 2; */
+    grid-column: destacado2-end/final;
+}

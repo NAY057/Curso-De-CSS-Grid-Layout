@@ -1,0 +1,65 @@
+/* Grid Container: va a ser el elemento padre que va a tener puesto un nuevo tipo de display: grid. Nos permite colocar otras propiedades para manipular nuestro layaout.
+
+Grid Item: Son nuestro componentes, contenido, lo que vamos a manejar. Nuestras filas o columnas que vamos a mover a nuestro gusto. Son hijos directos de grid.
+
+Grid Line: Lineas divisorias horizontales y verticales.
+
+Grid Track: Espacio entre dos líneas adyacentes. Filas y columnas.
+
+Grid Cell: Celdas, espacio en dos filas adyacentes y 2 columnas adyacentes.
+
+Grid Area: Espacio rodeado por 4 grid lines */
+
+/* 'display: grid;' activa el modo de rejillas */
+/* 'grid-template-columns: 200px 200px(recibe destintas unidades de medida) 200px;' establece la cantidad de columna y con que tamaño */
+/* 'grid-template: filas/columnas;' pone filas y columnas en una sola linea  */
+
+/* Grid explicito (explicit grid) es cuando nosotros definimos el numero de filas o columnas.
+Grid implicito (implicit grid) es cuando tenemos filas o columnas que no definimos pero son parte de nuestro grid. */
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    /* grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 300px 300px; */
+    /* 'fr' sirve para poner tamaños en fracciones */
+    /* grid-template: 300px 100px 100px/1fr 1fr 1fr; */
+    /* repeat(cantida , valor) funcion para usar el mismo valor variasveces */
+    /* minmax(min, max) agrega un valor minimo y maximo para el tamaño al hacer responsive */
+    grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+    /* grid-template: 300px 100px 100px/50% 200px 100px; */
+    gap: 10px;
+    height: 100vh;
+    grid-template-areas:  'header header'
+                          'left contenido'
+                          'footer footer';
+}
+
+.item{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+    /* 'gap: filas columnas;' espacea las filas y columnas  */
+    gap: 30px 100px;
+
+}
+
+.item2{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+/* '.item:nth-of-type(4)' toma el elemento de tipo 'item' que se especifique dentro de los parentesos */
+.item:nth-of-type(4){
+    background: tomato;
+    /* 'overflow: auto;' HACE SCROLEABLE esa parte de codigo */
+    overflow: auto;
+    /* subgrid */
+    display: grid;
+    grid-template: 50px 50px 50px/ 50px 50px 50px; 
+}

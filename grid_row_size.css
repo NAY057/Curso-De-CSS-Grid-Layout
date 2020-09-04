@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    /* 100vh = altura del viewport */
+    gap:  5px;
+    height: 100vh;
+    /* MUY IMPORTANTE ESTA PARTE, YA QUE ESTA PARTICIONA PERFECTAMENTE TODA LA PAGINA*/
+
+}
+
+.item{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+    gap: 30px 100px;
+
+}
+
+.item2{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+/* Esta parte selecciona el primer 'item' */
+.item:nth-of-type(1){
+/* background: tomato;
+grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 1/span 3;
+    grid-row: 1/span 2;
+}
+
+.item:nth-of-type(2){
+    grid-column: 4/span 2;
+    grid-row: 1/span 2;
+}
+.item:nth-of-type(3){
+    grid-column: 6/span 2;
+}

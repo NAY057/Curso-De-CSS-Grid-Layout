@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: grid;
+    gap:  5px;
+    height: 100vh;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(4, 100px);
+    /* justify-content: start/end/center/stretch/space-around/space-between/space-evenly ; alinea todo el contenido de manera horizontal */
+    justify-content: center ;
+
+    align-content: start/end/center/stretch/space-around/space-between/space-evenly ;
+    align-content: center;
+
+}
+
+.item{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+    gap: 30px 100px;
+
+}
+
+.item2{
+    background: green;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.item:nth-of-type(5){
+
+}

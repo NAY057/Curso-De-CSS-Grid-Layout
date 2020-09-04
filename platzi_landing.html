@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Landing</title>
+    <link rel="stylesheet" href="platzi_landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <style>
+        @media screen and (max-width: 768px){
+            .hero-container{
+                grid-template-columns: 70px 1fr;
+                /* aqui se designan las areas dentro del grid, tambien se usa el '.' para indicar que hay un espacio en el grid */
+                grid-template-areas:'badge title' 
+                                    '. description' 
+                                    'form form'
+                                    '. countdown';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-container">
+            <div class="badge">
+                <img src="../Curso de Desarrollo Web Online/banner-aviones.png">
+            </div>
+            <h1 class="title">
+                Curso de react.js
+            </h1>
+            <div class="description">
+                <p>mucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoomucho textoo</p>
+            </div>
+            <form action="" class="form">
+                <p>Registrste a Platzi</p>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo Electronico">
+                <button type="submit"> Comienza ahora </button>
+            </form>
+            <div class="countdown">
+                <p>Lanzamiento</p>
+                <p>
+                    <span>01d</span>
+                    <span>03h</span>
+                    <span>09m</span>
+                    <span>05s</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
